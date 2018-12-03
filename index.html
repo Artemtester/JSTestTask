@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+
+    <title>Single Page App Without A Framework</title>
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="main-content">
+    <div class="all-users page">
+        <ul class="users-list">
+            <script id="users-template" type="x-handlebars-template">​
+            {{#each this}}
+            <li data-index="{{id}}" class="form">
+                <img src="{{ avatar }}" height="130"/>
+                <h2> {{first_name}} </h2>
+                <h3>{{last_name}}</h3>
+                <button type="button">Change</button>
+            </li>
+            {{/each}}
+            </script>
+        </ul>
+    </div>
+
+
+
+    <div class="single-user page">
+        <div class="overlay"></div>
+        <div class="preview-large">
+            <img src=""/>
+            <form name="person" class="form">
+                <input id="name">
+                <input id="surname"><br>
+                <button type="button" onclick="loadDoc()">Send</button>
+            </form>
+            <span class="close">×</span>
+        </div>
+    </div>
+
+    <div class="error page">
+        <h3>Sorry, something went wrong :(</h3>
+    </div>
+
+</div>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+<script src="server.js"></script>
+<script src="scripts.js"></script>
+
+
+</body>
+</html>
