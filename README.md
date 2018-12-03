@@ -5,6 +5,7 @@ In folder run:
 1. 'npm i request'
 2. 'npm i fs'
 2. 'node ./server.js'
+
 Open index.html in browser
 
 # Description
